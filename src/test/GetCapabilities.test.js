@@ -21,13 +21,32 @@ describe('GetCapabilities', function() {
 
     });
 
-    it('should perform a GetCapabilities request (using example B.4.2 of WPS Standard)', function(done) {
+    it('should perform a GetCapabilities GET request (using example B.4.2 of WPS Standard)', function(done) {
 
         this.timeout(2000);
 
         const url = testURL + 'GetCapabilities';
 
-        GetCapabilities.execute(url)
+        GetCapabilities.executeGet(url)
+            .then((response) => {
+
+                expect(response.data.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
+                expect(response.jsonixData.value.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
+                expect(response.rawData).to.contain('<ows:Title>MyWebProcessingService</ows:Title>');
+
+            })
+            .then(done)
+            .catch((err) => console.log('Error:', err));
+
+    });
+
+    it('should perform a GetCapabilities POST request (using example B.4.2 of WPS Standard)', function(done) {
+
+        this.timeout(2000);
+
+        const url = testURL + 'GetCapabilities';
+
+        GetCapabilities.executePost(url)
             .then((response) => {
 
                 expect(response.data.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
