@@ -1,0 +1,5 @@
+<wps:ComplexData>
+  <wps:Format mimeType="application/geotiff" encoding="raw"
+default="true"/>
+  <wps:Format mimeType="application/geotiff" encoding="base64"/>
+</wps:ComplexData>

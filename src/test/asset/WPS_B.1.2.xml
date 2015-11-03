@@ -1,0 +1,29 @@
+<wps:LiteralData>
+  <wps:Format mimeType="text/plain" default="true"/>
+  <wps:Format mimeType="text/xml"/>
+  <LiteralDataDomain default="true">
+    <ows:AllowedValues>
+      <ows:Range>
+        <ows:MinimumValue>1</ows:MinimumValue>
+        <ows:MaximumValue>1000</ows:MaximumValue>
+      </ows:Range>
+    </ows:AllowedValues>
+    <ows:DataType
+ows:reference="http://www.w3.org/2001/XMLSchema#float">float
+</ows:DataType>
+    <ows:UOM>meters</ows:UOM>
+    <ows:DefaultValue>100</ows:DefaultValue>
+  </LiteralDataDomain>
+  <LiteralDataDomain>
+    <ows:AllowedValues>
+      <ows:Range>
+        <ows:MinimumValue>1</ows:MinimumValue>
+        <ows:MaximumValue>3000</ows:MaximumValue>
+      </ows:Range>
+    </ows:AllowedValues>
+    <ows:DataType
+ows:reference="http://www.w3.org/2001/XMLSchema#float">float
+</ows:DataType>
+    <ows:UOM>feet</ows:UOM>
+  </LiteralDataDomain>
+</wps:LiteralData>

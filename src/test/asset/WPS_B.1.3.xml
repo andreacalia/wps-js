@@ -1,0 +1,10 @@
+<LiteralValue
+  dataType=http://www.w3.org/2001/XMLSchema#double
+  uom="meter">
+    42.1
+</LiteralValue>
+ 
+<LiteralValue
+  dataType="http://www.w3.org/2001/XMLSchema#string">
+    ArableLand
+</LiteralValue>

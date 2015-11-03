@@ -1,0 +1,67 @@
+{
+  "name": "wps-js",
+  "version": "0.0.0",
+  "description": "This repository contains a Javascript library for accessing WPS (http://www.opengeospatial.org/standards/wps) services.",
+  "main": "node-main.js",
+  "scripts": {
+    "test": "mocha ./src/test --recursive",
+    "build-all": "gulp build-all",
+    "build-browser": "gulp build-browser",
+    "build-node": "gulp build-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreacalia/wps-js.git"
+  },
+  "keywords": [
+    "GIS",
+    "WPS",
+    "OGC",
+    "Web",
+    "Services",
+    "GEO"
+  ],
+  "author": "Andrea Calia <andrea.calia.46@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/andreacalia/wps-js/issues"
+  },
+  "homepage": "https://github.com/andreacalia/wps-js#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.0.15",
+    "babelify": "^7.2.0",
+    "body-parser": "^1.14.1",
+    "browserify": "^12.0.1",
+    "chai": "^3.4.0",
+    "cz-conventional-changelog": "^1.1.4",
+    "del": "^2.0.2",
+    "express": "^4.13.3",
+    "ghooks": "^0.3.2",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.2",
+    "mocha": "^2.3.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "http-browserify": "^1.7.0",
+    "install": "^0.1.8",
+    "jsonix": "^2.3.2",
+    "lodash": "^3.10.1",
+    "ogc-schemas": "^2.5.1",
+    "superagent": "^1.4.0",
+    "w3c-schemas": "^1.3.1"
+  },
+  "extra": {
+    "externalName": "wpsjs"
+  },
+  "config": {
+    "pre-commit": "npm run test",
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
