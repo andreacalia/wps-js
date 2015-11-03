@@ -25,9 +25,9 @@ describe('HTTP utils', function() {
 
         this.timeout(2000);
 
-        HttpUtils.get(testURL + 'hello').then((response) => {
+        HttpUtils.getXML(testURL + 'getXML').then((response) => {
 
-            expect(response.text).to.equal('hello');
+            expect(response.text).to.equal('<hello></hello>');
             done();
 
         }).catch((err) => console.error('Error:', err));
