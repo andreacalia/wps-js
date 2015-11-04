@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 require('./GetCapabilities.route')(app);
 require('./DescribeProcess.route')(app);
 require('./GetStatus.route')(app);
+require('./Dismiss.route')(app);
 
 app.get('/getXML', (req, res) => {
 
