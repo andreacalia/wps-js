@@ -32,7 +32,9 @@ describe('JSONIX utils', function() {
 
             const exampleText = fs.readFileSync(examplesFolder + exampleFileName, 'utf8');
 
-            expect(() => JsonixUtils.unmarshalString(exampleText)).to.not.throw(Error);
+            expect(() => {
+                JsonixUtils.unmarshalString(exampleText)
+            }).to.not.throw(Error);
 
         });
 
