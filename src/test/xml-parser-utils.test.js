@@ -3,9 +3,9 @@
 const expect = require('chai').expect;
 const fs = require('fs');
 const _ = require('lodash');
-const JsonixUtils = require('../main/jsonix-utils');
+const ParserUtils = require('../main/xml-parser-utils');
 
-describe('JSONIX utils', function() {
+describe('XML Parser utils', function() {
 
     it('should be able to parse XML samples from WPS 2.0 standard', function() {
 
@@ -33,7 +33,7 @@ describe('JSONIX utils', function() {
             const exampleText = fs.readFileSync(examplesFolder + exampleFileName, 'utf8');
 
             expect(() => {
-                JsonixUtils.unmarshalString(exampleText)
+                ParserUtils.unmarshalString(exampleText)
             }).to.not.throw(Error);
 
         });

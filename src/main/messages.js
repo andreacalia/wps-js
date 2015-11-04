@@ -12,8 +12,8 @@ module.exports = {
             return `Requested document (${url}) should be XML. Instead it is ${contentType}`;
         },
 
-        JSONIX_PARSING_ERROR: function(error) {
-            return `JSONIX found an error while parsing: ${error}`;
+        XML_PARSING_ERROR: function(error) {
+            return `XML parser found an error while parsing: ${error}`;
         }
 
     }

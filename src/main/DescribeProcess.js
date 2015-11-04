@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const HttpUtils = require('./http-utils');
-const JsonixUtils = require('./jsonix-utils');
+const ParserUtils = require('./xml-parser-utils');
 const msg = require('./messages');
 
 module.exports = {
@@ -35,9 +35,9 @@ module.exports = {
         // Parse the response
         let parsedDocument = null;
         try {
-            parsedDocument = JsonixUtils.unmarshalString(response.text);
+            parsedDocument = ParserUtils.unmarshalString(response.text);
         } catch(error) {
-            throw msg.errors.JSONIX_PARSING_ERROR(error);
+            throw msg.errors.XML_PARSING_ERROR(error);
         }
 
         let rawDocument = response.text;
