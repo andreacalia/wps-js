@@ -3,7 +3,6 @@
 const _ = require('lodash');
 const HttpUtils = require('./http-utils');
 const ParserUtils = require('./xml-parser-utils');
-const msg = require('./messages');
 
 module.exports = {
 
