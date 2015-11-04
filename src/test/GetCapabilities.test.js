@@ -31,7 +31,7 @@ describe('GetCapabilities', function() {
             .then((response) => {
 
                 expect(response.data.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
-                expect(response.jsonixData.value.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
+                expect(response.parsedData.value.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
                 expect(response.rawData).to.contain('<ows:Title>MyWebProcessingService</ows:Title>');
 
             })
@@ -50,7 +50,7 @@ describe('GetCapabilities', function() {
             .then((response) => {
 
                 expect(response.data.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
-                expect(response.jsonixData.value.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
+                expect(response.parsedData.value.serviceIdentification.title[0].value).to.equal('MyWebProcessingService');
                 expect(response.rawData).to.contain('<ows:Title>MyWebProcessingService</ows:Title>');
 
             })

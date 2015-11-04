@@ -12,7 +12,15 @@ module.exports = {
         const context = new Jsonix.Context([XLink_1_0, OWS_2_0, WPS_2_0]);
         const unmarshaller = context.createUnmarshaller();
 
-        return unmarshaller.unmarshalString(src);
+        try {
+
+            return unmarshaller.unmarshalString(src);
+
+        } catch(error) {
+
+            throw msg.errors.XML_PARSING_ERROR(error);
+
+        }
 
     }
 

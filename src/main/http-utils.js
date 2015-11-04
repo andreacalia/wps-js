@@ -32,6 +32,20 @@ module.exports = {
                 });
         });
 
+    },
+
+    assertResponseOk: function assertResponseOk(response) {
+
+        if( !response.ok )
+            throw msg.errors.CONNECTION_ERROR(response.request.url, response.status);
+
+    },
+
+    assertResponseToBeXML: function assertResponseToBeXML(response) {
+
+        if( response.header['content-type'] !== 'application/xml' && response.header['content-type'] !== 'text/xml' )
+            throw msg.errors.NOT_XML(response.request.url, response.header['content-type']);
+
     }
 
 };

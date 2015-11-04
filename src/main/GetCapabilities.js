@@ -18,27 +18,20 @@ module.exports = {
     _processResponse: function _processResponse(response) {
 
         // Check connection errors
-        if( !response.ok )
-            throw msg.errors.CONNECTION_ERROR(response.request.url, response.status);
+        HttpUtils.assertResponseOk(response);
 
         // Check header content-type to be xml
-        if( response.header['content-type'] !== 'application/xml' && response.header['content-type'] !== 'text/xml' )
-            throw msg.errors.NOT_XML(response.request.url, response.header['content-type']);
+        HttpUtils.assertResponseToBeXML(response);
 
         // Parse the response
-        let parsedDocument = null;
-        try {
-            parsedDocument = ParserUtils.unmarshalString(response.text);
-        } catch(error) {
-            throw msg.errors.XML_PARSING_ERROR(error);
-        }
-
-        let rawDocument = response.text;
+        const parsedDocument = ParserUtils.unmarshalString(response.text);
+        const rawDocument = response.text;
+        const simplerDocument = parsedDocument.value;
 
         return {
+            parsedData: parsedDocument,
             rawData: rawDocument,
-            data: parsedDocument.value,
-            jsonixData: parsedDocument
+            data: simplerDocument
         };
 
     },
