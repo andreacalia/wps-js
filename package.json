@@ -1,6 +1,6 @@
 {
   "name": "wps-js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "This repository contains a Javascript library for accessing WPS (http://www.opengeospatial.org/standards/wps) services.",
   "main": "node-main.js",
   "scripts": {
@@ -52,7 +52,7 @@
     "jsonix": "^2.3.2",
     "lodash": "^3.10.1",
     "ogc-schemas": "^2.5.1",
-    "superagent": "^1.4.0",
+    "request": "^2.65.0",
     "w3c-schemas": "^1.3.1"
   },
   "extra": {

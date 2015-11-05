@@ -14,6 +14,10 @@ module.exports = {
 
         XML_PARSING_ERROR: function(error) {
             return `XML parser found an error while parsing: ${error}`;
+        },
+
+        POST_BODY_MUST_BE_STRING: function() {
+            return 'POST body must be a string';
         }
 
     }

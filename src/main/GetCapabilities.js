@@ -23,8 +23,8 @@ module.exports = {
         HttpUtils.assertResponseToBeXML(response);
 
         // Parse the response
-        const parsedDocument = ParserUtils.unmarshalString(response.text);
-        const rawDocument = response.text;
+        const parsedDocument = ParserUtils.unmarshalString(response.body);
+        const rawDocument = response.body;
         const simplerDocument = parsedDocument.value;
 
         return {

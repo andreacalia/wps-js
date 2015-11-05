@@ -27,7 +27,7 @@ describe('HTTP utils', function() {
 
         HttpUtils.getXML(testURL + 'getXML').then((response) => {
 
-            expect(response.text).to.equal('<hello></hello>');
+            expect(response.body).to.equal('<hello></hello>');
             done();
 
         }).catch((err) => console.error('Error:', err));
