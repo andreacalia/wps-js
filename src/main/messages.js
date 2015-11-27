@@ -18,6 +18,14 @@ module.exports = {
 
         POST_BODY_MUST_BE_STRING: function() {
             return 'POST body must be a string';
+        },
+
+        INPUT_PARAMETERS_NOT_VALID: function(msg) {
+            return `Input parameters invalid: ${msg}`;
+        },
+
+        NOT_IMPLEMENTED: function(msg) {
+            return `Sorry, this feature is not implemented yet: ${msg}`;
         }
 
     }
