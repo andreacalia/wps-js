@@ -44,13 +44,14 @@ module.exports = {
 
     _ComplexTemplate: _.template(`
         <wps:ComplexData>
-            <wps:Format
-            <%
-            /* Schema */ if( input.schema ) print('schema="' + input.schema + '"');
-            /* Mime type */ if( input.mimeType ) print('mimeType="' + input.mimeType + '"');
-            /* Encoding */ if( input.encoding ) print('encoding="' + input.encoding + '"');
+            <%  if( input.schema || input.mimeType || input.encoding ) {
+                    print('<wps:Format');
+                    /* Schema */ if( input.schema ) print(' schema="' + input.schema + '"');
+                    /* Mime type */ if( input.mimeType ) print(' mimeType="' + input.mimeType + '"');
+                    /* Encoding */ if( input.encoding ) print(' encoding="' + input.encoding + '"');
+                    print('/>');
+                }
             %>
-            />
             <%= input.content %>
         </wps:ComplexData>
     `),
